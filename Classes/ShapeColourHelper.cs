@@ -1,4 +1,5 @@
 ﻿
+using System.Reflection.Metadata.Ecma335;
 using Week1ObjectOriented.Interfaces;
 
 namespace Week1ObjectOriented.Classes
@@ -20,5 +21,15 @@ namespace Week1ObjectOriented.Classes
             return s;
         }
 
+        public static Shape GetRandomColor(Shape s)
+        {
+            string[] colors = { "Red", "Blue", "Yellow", "Green", "Orange" };
+
+            Random rnd = new Random();
+            int index = rnd.Next(colors.Length);
+            string color = (colors[index]);
+            s.Colour = color;
+            return s;
+        }
     }
 }
